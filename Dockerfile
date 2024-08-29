@@ -15,5 +15,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Definir una variable de entorno para la API Key
 ENV API_KEY="63f99e64f995efd1b8fc94bc462b2a51"
 
-# Comando predeterminado para ejecutar la aplicación
-CMD ["python", "temperature.py"]
+

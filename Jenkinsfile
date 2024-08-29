@@ -15,6 +15,13 @@ pipeline {
                     // Here, Jenkins will build the image using the specified Dockerfile                
             }
         }
+
+        stage('Execute APP')
+        {
+            steps{
+                sh 'python /app/temperature.py'
+            }
+        }
        
     }
 
