@@ -1,33 +1,33 @@
 import requests
 
 def get_weather(api_key, city):
-    # URL de la API de OpenWeatherMap
+    # OpenWeatherMap API URL
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
     
-    # Hacer la petición GET a la API
+    # Make the GET request to the API
     response = requests.get(url)
     
-    # Verificar si la respuesta fue exitosa
+    # Check if the response was successful
     if response.status_code == 200:
         data = response.json()
         temp_celsius = data['main']['temp']
         return temp_celsius
     else:
-        print(f"Error obteniendo datos para {city}. Código de estado: {response.status_code}")
+        print(f"Error getting data for {city}. Status code: {response.status_code}")
         return None
 
 def main():
-    # Tu API key de OpenWeatherMap
+    # API key OpenWeatherMap
     api_key = "221ef973315076a01c33d0215ebbfe02"
 
-    # Ciudades a consultar
+    # Cities to consult
     cities = ["New York", "Madrid", "Paris"]
 
-    # Obtener y mostrar la temperatura en Celsius de cada ciudad
+    # Get and display the temperature in Celsius for each city
     for city in cities:
         temp = get_weather(api_key, city)
         if temp is not None:
-            print(f"La temperatura en {city} es {temp}°C")
+            print(f"La temperatura en {city} is {temp}°C")
 
 if __name__ == "__main__":
     main()

@@ -1,11 +1,13 @@
 pipeline {
-    agent {
-        dockerfile {
-            filename 'Dockerfile'  //Dockerfile name
-            dir '.'  // The directory where the Dockerfile is located
-            additionalBuildArgs '--tag apasoft/temperatures'  // If necessary, additional build arguments can be passed
+    agent{
+        dockerfile
+        {
+            filename 'Dockerfile'
+            dir '.'
+            additionalBuildArgs '--tag apasoft/temperatures'
             args '-p 9191:80'
         }
+        
     }
 
     stages {

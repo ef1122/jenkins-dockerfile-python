@@ -1,18 +1,16 @@
-# Usar una imagen base oficial de Python
+# Using an official Python base image
 FROM python:3.10-slim
 
 LABEL AUTHOR='Apasoft Training'
-# Establecer el directorio de trabajo dentro del contenedor
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copiar el archivo de requisitos (requirements.txt) y el código fuente
+# Copy the requirements file (requirements.txt) and the source code
 COPY requirements.txt requirements.txt
 COPY temperature.py temperature.py
 
-# Instalar las dependencias especificadas en requirements.txt
+# Install the dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Definir una variable de entorno para la API Key
-ENV API_KEY="63f99e64f995efd1b8fc94bc462b2a51"
 
 
