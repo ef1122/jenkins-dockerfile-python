@@ -1,7 +1,7 @@
 # Using an official Python base image
 FROM python:3.10-slim
 
-LABEL AUTHOR='Apasoft Training'
+LABEL AUTHOR='EF'
 # Set the working directory inside the container
 WORKDIR /app
 
